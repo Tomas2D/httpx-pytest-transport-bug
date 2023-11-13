@@ -9,6 +9,7 @@ from main import run
 @pytest.mark.asyncio
 async def test_main(httpx_mock: HTTPXMock):
     httpx_mock.add_response(method="POST", status_code=httpx.codes.TOO_MANY_REQUESTS, json={})
+    httpx_mock.add_response(method="POST", status_code=httpx.codes.TOO_MANY_REQUESTS, json={})
     httpx_mock.add_response(method="POST", status_code=httpx.codes.OK, json={
         "id": 1,
     })

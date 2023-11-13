@@ -6,7 +6,7 @@ from http_utils import AsyncRetryTransport
 
 async def run():
     client = AsyncClient(
-        transport=AsyncRetryTransport(retries=1)
+        transport=AsyncRetryTransport(retries=2)
     )
     result = await client.post(url="https://jsonplaceholder.typicode.com/posts", json={
         "title": "foo",
